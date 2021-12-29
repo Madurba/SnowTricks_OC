@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SnowTricks{% endblock %}
+
+{% block body %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/jumbotron.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto" style="z-index: 1;">
+                    <div class="site-heading">
+                        <h1>Devenez une légende du Snowboard !</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+    <h1 class="mb-5" >Les dernières figures postées</h1>
+        <div class="row" >
+            {% for trick in tricks %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="img/Tricks/tricks.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{trick.title}}</h5>
+                            <p class="card-text">{{trick.content}}</p>
+                            <a href="/tricks/{{ trick.id }}" class="btn btn-primary">Voir la figure</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

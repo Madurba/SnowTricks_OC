@@ -26,7 +26,6 @@ class HomeController extends AbstractController
     {
         return $this->render('home/trick.html.twig', [
             'trick' => $trick,
-
         ]);
     }
 

@@ -13,19 +13,44 @@ class Trick
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=11)
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=45)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", length=255)
      */
-    private $Content;
+    private $content;
+
+    /**
+     * @ORM\Column(type="integer", length=11)
+     */
+    private $user_id;
+
+    /**
+     * @ORM\Column(type="integer", length=11)
+     */
+    private $type_tricks_id;
+
+    /**
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private $create_at;
+
+    /**
+     * @ORM\Column(type="datetime_immutable", nullable=true)
+     */
+    private $update_at;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $main_picture;
 
 
 
@@ -48,12 +73,72 @@ class Trick
 
     public function getContent(): ?string
     {
-        return $this->Content;
+        return $this->content;
     }
 
-    public function setContent(string $Content): self
+    public function setContent(string $content): self
     {
-        $this->Content = $Content;
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(int $user_id): self
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    public function getTypeTricksId(): ?int
+    {
+        return $this->type_tricks_id;
+    }
+
+    public function setTypeTricksId(int $type_tricks_id): self
+    {
+        $this->type_tricks_id = $type_tricks_id;
+
+        return $this;
+    }
+
+    public function getCreateAt(): ?\DateTimeImmutable
+    {
+        return $this->create_at;
+    }
+
+    public function setCreateAt(\DateTimeImmutable $create_at): self
+    {
+        $this->create_at = $create_at;
+
+        return $this;
+    }
+
+    public function getUpdateAt(): ?\DateTimeImmutable
+    {
+        return $this->update_at;
+    }
+
+    public function setUpdateAt(\DateTimeImmutable $update_at): self
+    {
+        $this->update_at = $update_at;
+
+        return $this;
+    }
+
+    public function getMainPicture(): ?string
+    {
+        return $this->main_picture;
+    }
+
+    public function setMainPicture(string $main_picture): self
+    {
+        $this->main_picture = $main_picture;
 
         return $this;
     }

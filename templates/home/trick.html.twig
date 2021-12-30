@@ -5,31 +5,32 @@
 {% block body %}
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('#');height:100px">
+    <header class="masthead" style="background-image: url('../img/jumbotron.jpg');height: 50vh;">
         <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto" style="z-index: 1;">
+                    <div class="site-heading">
+                        <!-- Title -->
+                        <h1 class="mt-4">{{ trick.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
   <!-- Page Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <!-- Title -->
-        <h1 class="mt-4">{{ trick.title }}</h1>
         <div class="d-flex align-items-end">
         <!--image view-->
-        <img class="img-fluid rounded" src="../img/Tricks/tricks.png" alt="">
-        <div>
-        <!-- Author -->
-        <p style="margin:0 0 0 10px;">
-          by
-          <a href="#">Florian</a>
-        </p>
-        <!-- Date/Time -->
-        <p style="margin:0 0 0 10px;">Posté le 24 janvier 2021 à 12:00 PM</p>
+            <img class="img-fluid rounded mx-2" src="../img/Tricks/tricks.png" alt="">
+            <img class="img-fluid rounded mx-2" src="../img/Tricks/tricks.png" alt="">
+            <iframe class="mx-2" width="560" height="315" src="https://www.youtube.com/embed/V9xuy-rVj9w" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QMrelVooJR4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </div>
-    <hr>
-
+        <hr>
 
         <!-- Post Content -->
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
@@ -100,72 +101,9 @@
         </div>
 
       </div>
-
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
-
-        <!-- Search Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Rechercher</h5>
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="mots-clés...">
-              <span class="input-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Categories Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Bitcoin</a>
-                  </li>
-                  <li>
-                    <a href="#">Ethereum</a>
-                  </li>
-                  <li>
-                    <a href="#">SmartContracts</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Token</a>
-                  </li>
-                  <li>
-                    <a href="#">ICO</a>
-                  </li>
-                  <li>
-                    <a href="#">ERC20</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Flux RSS</h5>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.
-          </div>
-        </div>
-
+      <!-- /.row -->
       </div>
-
+    <!-- /.container -->
     </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
 
 {% endblock %}

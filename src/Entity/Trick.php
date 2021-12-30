@@ -38,12 +38,12 @@ class Trick
     private $type_tricks_id;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $create_at;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $update_at;
 
@@ -107,24 +107,24 @@ class Trick
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeImmutable
+    public function getCreateAt(): ?\DateTime
     {
         return $this->create_at;
     }
 
-    public function setCreateAt(\DateTimeImmutable $create_at): self
+    public function setCreateAt(\DateTime $create_at): self
     {
         $this->create_at = $create_at;
 
         return $this;
     }
 
-    public function getUpdateAt(): ?\DateTimeImmutable
+    public function getUpdateAt(): ?\DateTime
     {
         return $this->update_at;
     }
 
-    public function setUpdateAt(\DateTimeImmutable $update_at): self
+    public function setUpdateAt(\DateTime $update_at): self
     {
         $this->update_at = $update_at;
 

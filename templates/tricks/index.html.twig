@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SnowTricks{% endblock %}
+{% block title %}Tous les tricks !{% endblock %}
 
 {% block body %}
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/jumbotron.jpg')">
+    <header class="masthead" style="background-image: url('../img/jumbotron.jpg');height: 50vh;">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -20,9 +20,9 @@
 
     {# loop tricks #}
     <div class="container">
-    <h1 class="mb-5" >Les dernières figures postées</h1>
+        <h1 class="mb-5" >Toutes les figures</h1>
         <div class="row" >
-            {% for trick in tricks %}
+            {% for trick in all_tricks %}
                 <div class="col-md-3">
                     <div class="card mb-3">
                         <img src="img/Tricks/tricks.png" class="card-img-top" alt="...">
@@ -36,9 +36,4 @@
             {% endfor %}
         </div>
     </div>
-
-    <div class="text-center mt-5">
-        <button type="button" class="btn btn-outline-secondary">Voir plus de figure</button>
-    </div>
-
 {% endblock %}

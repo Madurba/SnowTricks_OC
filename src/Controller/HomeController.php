@@ -11,6 +11,7 @@ use App\Repository\TrickRepository;
 
 class HomeController extends AbstractController
 {
+    //home page
     #[Route('/', name: 'home')]
     public function index(TrickRepository $repo): Response
     {
@@ -21,12 +22,12 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/tricks/{id}', name: 'show_tricks')]
+    //show more tricks in home page
+    #[Route('/trick/{id}', name: 'show_trick')]
     public function show(Trick $trick): Response
     {
         return $this->render('home/trick.html.twig', [
             'trick' => $trick,
         ]);
     }
-
 }

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db4919ad-ad91-442d-b616-f2f5b7ebae4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SnowTricks_OC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SnowTricks_OC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="db4919ad-ad91-442d-b616-f2f5b7ebae4f" name="Changes" comment="update debug Entities">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Commentaries.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Picture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tricks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/TypeTricks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Video.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CommentariesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/PictureRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TricksRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UsersRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/VideoRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TricksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TricksController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Trick.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Trick.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/trick.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/trick.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Trick.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TrickRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Feature_readTrick" />
+        <entry key="$PROJECT_DIR$" value="feature_showTricks" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -182,6 +191,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -199,8 +209,16 @@
       <option name="presentableId" value="Default" />
       <updated>1641319650519</updated>
       <workItem from="1641319661430" duration="2832000" />
-      <workItem from="1641333965129" duration="4276000" />
+      <workItem from="1641333965129" duration="6563000" />
     </task>
+    <task id="LOCAL-00001" summary="update debug Entities">
+      <created>1641349024698</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641349024698</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,5 +234,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update debug Entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="update debug Entities" />
   </component>
 </project>

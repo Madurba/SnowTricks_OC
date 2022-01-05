@@ -15,16 +15,16 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(TrickRepository $repo): Response
     {
-        $tricks = $repo->findAll();
+        $tricks = $repo->findBy([], ['create_at' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
             'tricks' => $tricks,
         ]);
     }
 
-    //show more tricks in home page
+    //show trick article
     #[Route('/trick/{id}', name: 'show_trick')]
-    public function show(Trick $trick): Response
+    public function show(Trick $trick, ): Response
     {
         return $this->render('home/trick.html.twig', [
             'trick' => $trick,

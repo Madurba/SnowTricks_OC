@@ -28,16 +28,6 @@ class Trick
     private $content;
 
     /**
-     * @ORM\Column(type="integer", length=11)
-     */
-    private $user_id;
-
-    /**
-     * @ORM\Column(type="integer", length=11)
-     */
-    private $type_tricks_id;
-
-    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $create_at;
@@ -83,29 +73,6 @@ class Trick
         return $this;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(int $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
-
-    public function getTypeTricksId(): ?int
-    {
-        return $this->type_tricks_id;
-    }
-
-    public function setTypeTricksId(int $type_tricks_id): self
-    {
-        $this->type_tricks_id = $type_tricks_id;
-
-        return $this;
-    }
 
     public function getCreateAt(): ?\DateTime
     {

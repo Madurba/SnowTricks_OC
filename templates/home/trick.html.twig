@@ -12,7 +12,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto" style="z-index: 1;">
                     <div class="site-heading">
                         <!-- Title -->
-                        <h1 class="mt-4">{{ trick.title }}</h1>
+                        <h1 class="mt-4">{{ trick.name }}</h1>
                     </div>
                 </div>
             </div>
@@ -46,9 +46,9 @@
 
           <div class="row justify-content-center mt-5 mb-5">
               <div class="col-8">
-                  <button type="button" class="btn btn-outline-info">Auteur :{{ trick.userId }}</button>
-                  <button type="button" class="btn btn-outline-info">Date de création :{{ trick.createAt|date('d-m-Y H:i') }}</button>
-                  <button type="button" class="btn btn-outline-info">Mise à jour :{{ trick.updateAt|date('d-m-Y H:i') }}</button>
+                  <button type="button" class="btn btn-outline-info">Auteur :{{ trick.slug }}</button>
+                  <button type="button" class="btn btn-outline-info">Date de création :{{ trick.createdAt|date('d-m-Y H:i') }}</button>
+                  <button type="button" class="btn btn-outline-info">Mise à jour :{{ trick.updatedAt|date('d-m-Y H:i') }}</button>
               </div>
           </div>
         <hr>
@@ -66,13 +66,21 @@
           </div>
         </div>
 
+          <div>
+              {% for message in trick.messages %}
+                  <div>{{ message.id }}</div>
+              {% endfor %}
+
+          </div>
+
           <hr>
+
         <!-- Single Comment -->
         <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
           <div class="media-body">
             <h5 class="mt-0">Pseudo</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              LOL
           </div>
         </div>
 
@@ -98,6 +106,7 @@
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
               </div>
             </div>
+
 
           </div>
 

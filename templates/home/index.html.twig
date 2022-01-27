@@ -29,7 +29,19 @@
                         <div class="card-body">
                             <h5 class="card-title">{{trick.name}}</h5>
                             <p class="card-text">{{trick.description}}</p>
-                            <a href="/trick/{{ trick.id }}" class="btn btn-primary">Voir la figure</a>
+                            <a href="{{ path('show_trick', {'id': trick.id}) }}" class="btn btn-primary">Voir la figure</a>
+                            
+                            <li class="d-flex align-items-center me-3">
+                                <a href="#" class="h4 text-white">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                            </li>
+                            <li class="d-flex align-items-center" id="#">
+                            <!-- Button trigger modal -->
+                                <a href="#" class="h4 text-white" data-action="#">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </li>
                         </div>
                     </div>
                 </div>

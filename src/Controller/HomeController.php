@@ -2,12 +2,12 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Tricks;
-use App\Entity\Message;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\TricksRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\TricksRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class HomeController extends AbstractController
@@ -23,11 +23,11 @@ class HomeController extends AbstractController
         ]);
     }
 
-    //show more tricks in home page
+    //show more tricks
     #[Route('/trick/{id}', name: 'show_trick')]
     public function show(Tricks $trick): Response
     {
-        return $this->render('home/trick.html.twig', [
+        return $this->render('trick.html.twig', [
             'trick' => $trick
         ]);
     }

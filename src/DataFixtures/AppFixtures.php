@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Message;
 use App\Entity\Tricks;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -20,7 +21,6 @@ class AppFixtures extends Fixture
                   ->setDescription( $faker->sentence(6) )
                   ->setCreatedAt( $faker->dateTimeBetween() )
                   ->setUpdatedAt( $faker->dateTimeBetween() )
-                 ->addMessage($faker->sentence(6) )
                   ->setSlug( $faker->sentence(1) );
 
             
@@ -35,6 +35,16 @@ class AppFixtures extends Fixture
 
             $manager->persist($message);
         }
+
+        $john = new User();
+        $john->setUsername("John2021")
+            ->setLastName("Doe")
+            ->setFirstName("John")
+            ->setEmail('john@test.com')
+            ->setPicture('#')
+            ->setIsVerified(true);
+
+        $manager->persist($john);
 
         $manager->flush();
     }

@@ -30,6 +30,8 @@ class Group
      */
     private $tricks;
 
+
+
     public function __construct()
     {
         $this->tricks = new ArrayCollection();
@@ -70,7 +72,7 @@ class Group
     {
         if (!$this->tricks->contains($trick)) {
             $this->tricks[] = $trick;
-            $trick->setGroupId($this);
+            $trick->setGroup($this);
         }
 
         return $this;
@@ -80,8 +82,8 @@ class Group
     {
         if ($this->tricks->removeElement($trick)) {
             // set the owning side to null (unless already changed)
-            if ($trick->getGroupId() === $this) {
-                $trick->setGroupId(null);
+            if ($trick->getGroup() === $this) {
+                $trick->setGroup(null);
             }
         }
 

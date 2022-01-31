@@ -38,6 +38,13 @@ class Message
      */
     private $trick;
 
+
+
+    public function __construct()
+    {
+        $this->createdAt = date_create();
+    }
+
     
 
     public function getId(): ?int

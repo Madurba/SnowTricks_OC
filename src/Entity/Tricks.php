@@ -114,6 +114,7 @@ class Tricks
     {
         if (!$this->messages->contains($message)) {
             $this->messages[] = $message;
+            
             $message->setTrick($this);
         }
 

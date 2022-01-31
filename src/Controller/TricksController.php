@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TricksController extends AbstractController
 {
     #[Route('/tricks', name: 'tricks')]
+    
     public function index(TricksRepository $repo): Response
     {
         $tricks = $repo->findAll();

@@ -27,8 +27,8 @@
                     <div class="card mb-3">
                         <img src="img/Tricks/tricks.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{trick.name}}</h5>
-                            <p class="card-text">{{trick.description}}</p>
+                            <h5 class="card-title">{{ trick.name }}</h5>
+                            <p class="card-text">{{ trick.description|slice(0, 50) ~ '...' }}</p>
                             <a href="{{ path('show_trick', {'id': trick.id}) }}" class="btn btn-primary">Voir la figure</a>
                             
                             <li class="d-flex align-items-center me-3">

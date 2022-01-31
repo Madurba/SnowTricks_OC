@@ -7,7 +7,7 @@ use App\Entity\Tricks;
 use App\Entity\Message;
 use App\Repository\TricksRepository;
 use App\Form\MessageFormType;
-use Doctrine\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,13 +31,15 @@ class HomeController extends AbstractController
     //show more tricks
     #[Route('/trick/{id}', name: 'show_trick')]
 
-    public function show(Tricks $trick, Request $request, ObjectManager $manager): Response
+    public function show(Tricks $trick, Request $request, EntityManagerInterface $manager): Response
     {
         $message = new Message();
         $form = $this->createForm(MessageFormType::class, $message);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+
+            $trick->addMessage($message);
             $manager->persist($message);
             $manager->flush();
 

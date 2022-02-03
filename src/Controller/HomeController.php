@@ -20,15 +20,15 @@ class HomeController extends AbstractController
 
     public function index(TricksRepository $repo): Response
     {
+        var_dump($repo);
         $tricks = $repo->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
             'tricks' => $tricks,
-        ])
-        ;
+        ]);
     }
 
-    //show more tricks
+    //show trick view
     #[Route('/trick/{id}', name: 'show_trick')]
 
     public function show(Tricks $trick, Request $request, EntityManagerInterface $manager): Response
@@ -37,15 +37,13 @@ class HomeController extends AbstractController
         $form = $this->createForm(MessageFormType::class, $message);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $trick->addMessage($message);
             $manager->persist($message);
             $manager->flush();
 
-            return $this->redirectToRoute('show_trick', ['id' => $trick->getId()])
-            ;
-
+            return $this->redirectToRoute('show_trick', ['id' => $trick->getId()]);
         }
 
         return $this->render('trick.html.twig', [

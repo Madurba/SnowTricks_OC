@@ -1,56 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SnowTricks{% endblock %}
+{% block title %}SnowTricks
+{% endblock %}
 
 {% block body %}
 
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/jumbotron.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto" style="z-index: 1;">
-                    <div class="site-heading">
-                        <h1>Devenez une légende du Snowboard !</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+	<!-- Page Header -->
+	<header class="masthead" style="background-image: url('img/jumbotron.jpg')">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto" style="z-index: 1;">
+					<div class="site-heading">
+						<h1>Devenez une légende du Snowboard !</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    {# loop tricks #}
-    <div class="container">
-    <h1 class="mb-5" >Les dernières figures postées</h1>
-        <div class="row" >
-            {% for trick in tricks %}
-                <div class="col-md-3">
-                    <div class="card mb-3">
-                        <img src="img/Tricks/tricks.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ trick.name }}</h5>
-                            <p class="card-text">{{ trick.description|slice(0, 50) ~ '...' }}</p>
-                            <a href="{{ path('show_trick', {'id': trick.id}) }}" class="btn btn-primary">Voir la figure</a>
-                            
-                            <li class="d-flex align-items-center me-3">
-                                <a href="#" class="h4 text-white">
-                                    <i class="fa-solid fa-pen"></i>
-                                </a>
-                            </li>
-                            <li class="d-flex align-items-center" id="#">
-                            <!-- Button trigger modal -->
-                                <a href="#" class="h4 text-white" data-action="#">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+	{# loop tricks #}
+	<div class="container">
+		<h1 class="mb-5">Les dernières figures postées</h1>
+		<div class="row">
+			{% for trick in tricks %}
+				<div class="col-md-3">
+					<div class="card mb-3">
+						<img src="img/Tricks/tricks.png" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{ trick.name }}</h5>
+							<p class="card-text">{{ trick.description|slice(0, 50) ~ '...' }}</p>
+							<a href="{{ path('show_trick', {'id': trick.id}) }}" class="btn btn-primary">Voir la figure</a>
 
-    <div class="text-center mt-5">
-        <a href="{{ path('tricks') }}" type="button" class="btn btn-outline-secondary">Voir plus de figure</a>
-    </div>
+							<li class="d-flex align-items-center me-3">
+								<a href="#" class="h4 text-white">
+									<i class="fa-solid fa-pen"></i>
+								</a>
+							</li>
+							<li
+								class="d-flex align-items-center" id="#">
+								<!-- Button trigger modal -->
+								<a href="#" class="h4 text-white" data-action="#">
+									<i class="fa-solid fa-trash"></i>
+								</a>
+							</li>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="text-center mt-5">
+		<a href="{{ path('tricks') }}" type="button" class="btn btn-outline-secondary">Voir plus de figure</a>
+	</div>
 
 {% endblock %}
